@@ -10,3 +10,6 @@ export xxx = (a,b)=>
   for i, pos in a
     c.push i+b[pos]
   c
+
+console.log 1
+
