@@ -1,0 +1,35 @@
+{
+  "name": "@rmw/xxx",
+  "version": "0.0.0",
+  "repository": "https://github.com/rmw-lib/xxx",
+  "author": "i@rmw.link",
+  "license": "MulanPSL-2.0",
+  "exports": {
+    ".": "./lib/index.js",
+    "./*": "./lib/*"
+  },
+  "files": [
+    "/lib"
+  ],
+  "dependencies": {
+    "@rmw/console": "^0.0.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@rmw/md-include": "^0.4.5",
+    "babel-loader": "^8.2.2",
+    "coffeescript": "^2.5.1",
+    "colortape": "^0.1.2",
+    "nodemon": "^2.0.7",
+    "source-map-support": "^0.5.19",
+    "tape": "^5.2.2",
+    "tape-catch": "^1.0.6",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
+  },
+  "scripts": {
+    "prepare": "rm -rf lib && rsync -av --include='*/' --include='*.txt' --include='*.js' --include='*.mjs' --exclude=* src/ lib/ && npx coffee -m --compile --output lib src/"
+  },
+  "type": "module"
+}
